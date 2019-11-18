@@ -15,14 +15,14 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.Packages_Token}}
       run: mvn -B package --file pom.xml
 
     
     - name: Deploy to Github Package Registry
       env:
         GITHUB_USERNAME: x-access-token
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=GITHUB_TOKEN 
+        GITHUB_TOKEN: ${{ secrets.Packages_Token }}
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=Packages_Token 
     
 
