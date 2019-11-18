@@ -64,6 +64,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+  <groupId>com.example</groupId>
+  <artifactId>SpringRestData</artifactId>
+  <version>0.0.1-snapshot</version>
+</dependency>
 	</dependencies>
 
 	<build>
