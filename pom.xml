@@ -79,7 +79,7 @@
 	</build>
 <distributionManagement>
 		<repository>
-			<id>github</id>
+			<id>213298375</id>
 			<name>GitHub OWNER Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/AishwaryaPedemane/master</url>
 		</repository>
