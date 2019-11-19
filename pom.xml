@@ -103,15 +103,15 @@
         </plugin>
 		</plugins>
 		<finalName>docker-spring-data-rest</finalName>
-		<distributionManagement>
+		
+
+	</build>
+<distributionManagement>
 		<repository>
 			<id>github</id>
 			<name>GitHub OWNER Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/AishwaryaPedemane/master</url>
 		</repository>
 	</distributionManagement>
-
-	</build>
-
 	
 </project>
