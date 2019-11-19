@@ -22,7 +22,7 @@ jobs:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
           mvn install
-          mvn deploy -Dtoken=GITHUB_TOKEN
+          mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=GITHUB_TOKEN
            
            
       
