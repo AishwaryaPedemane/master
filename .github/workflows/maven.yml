@@ -19,10 +19,10 @@ jobs:
            
     - name: Deploy to Github Package Registry
       env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.GIT_PACKAGES_TOKEN}}
       run: |
-          mvn install
-          mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=c8b3ea9046f43207a8b0c6507d3f11daf1cf5efa
+          
+          mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=GIT_PACKAGES_TOKEN
            
            
       
