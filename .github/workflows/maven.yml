@@ -27,7 +27,7 @@ jobs:
       
       run: |
           
-          mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=5094bcf9e7134a354e6d5e7e1293a479aa379982
+          mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=$GH_TOKEN
            
            
       
