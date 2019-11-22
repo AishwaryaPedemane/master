@@ -28,6 +28,13 @@ jobs:
       run: |
             mvn --version
             mvn --settings .m2/settings.xml -Dtoken=$GITHUB_TOKEN deploy -e
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+     
+    
+            
+  
+  
       
 
            
