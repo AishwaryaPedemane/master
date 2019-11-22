@@ -22,14 +22,25 @@ jobs:
     - name: Build with Maven
       run: |
            mvn -B package --file pom.xml
+    - name: Packaging
+      run: | 
+          mkdir project
+          cd project
+          cd ..
+          cp project/target/SpringRestData-1.0.0.jar  
+          echo "Onboarder service packaged successfully."
+         
+    - uses: actions/upload-artifact@v1
+      with:
+       name: artifact
+       path: project/
            
     - name: Deploy to Github Package Registry
-      env:
-          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
-      
       run: |
             mvn --version
             mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN deploy -e
+            
+    
       
 
            
