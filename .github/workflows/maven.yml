@@ -26,7 +26,7 @@ jobs:
     - name: Packaging
       run: | 
           mkdir SpringProject
-          cp SpringRestData/target/docker-spring-data-rest.jar  SpringProject/
+          cp target/docker-spring-data-rest.jar  SpringProject/
           echo " Packaged successfully."
          
     - uses: actions/upload-artifact@v1
