@@ -25,14 +25,14 @@ jobs:
            mvn install
     - name: Packaging
       run: | 
-          mkdir SpringRestData
-          cp master/target/docker-spring-data-rest.jar  SpringRestData/
+          mkdir SpringProject
+          cp SpringRestData/target/docker-spring-data-rest.jar  SpringProject/
           echo " Packaged successfully."
          
     - uses: actions/upload-artifact@v1
       with:
        name: artifact
-       path: SpringRestData/
+       path: SpringProject/
            
     
     
