@@ -25,8 +25,13 @@ jobs:
            
     - name: Deploy to Github Package Registry
       
+      
       run: |
-            mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=$GITHUB_TOKEN
+            mvn --version
+            mvn --settings .m2/settings.xml -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=mvn deploy -Dregistry=https://maven.pkg.github.com/phanatic -Dtoken=$GH_TOKEN deploy -e
+      env:
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+
            
            
       
