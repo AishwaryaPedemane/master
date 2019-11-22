@@ -28,9 +28,9 @@ jobs:
       
       run: |
             mvn --version
-            mvn --settings .m2/settings.xml -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=${{ secrets.GITHUB_TOKEN }} deploy -e
+            mvn --settings .m2/settings.xml -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=${{ secrets.GH_TOKEN }} deploy -e
       env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
            
            
