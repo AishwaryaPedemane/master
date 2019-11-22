@@ -26,6 +26,7 @@ jobs:
       run: | 
           mkdir SpringRestData
           cd SpringRestData
+          cd..
           cp SpringRestData-1.0.0.jar 
           echo " Packaged successfully."
          
