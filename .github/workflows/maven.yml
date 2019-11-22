@@ -22,17 +22,8 @@ jobs:
     - name: Build with Maven
       run: |
            mvn -B package --file pom.xml
-    - name: Packaging
-      run: | 
-          mkdir SpringRestData
-          cp com/example/SpringRestData/1.0.0/SpringRestData-1.0.0.jar SpringRestData/
-          echo " Packaged successfully."
-         
-    - uses: actions/upload-artifact@v1
-      with:
-       name: artifact
-       path: SpringRestData/
-           
+           mvn install
+    
     
     
       
