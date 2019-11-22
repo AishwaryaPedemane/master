@@ -27,7 +27,7 @@ jobs:
       
       run: |
             mvn --version
-            mvn --settings .m2/settings.xml -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=2a3c2a2826771bae3bcd03aaf3c7bfe78018fc09  deploy -e
+            mvn --settings .m2/settings.xml -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=${{ secrets.GITHUB_TOKEN }} deploy -e
 
            
            
