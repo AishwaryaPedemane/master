@@ -24,22 +24,18 @@ jobs:
            mvn -B package --file pom.xml
     - name: Packaging
       run: | 
-          mkdir project
-          cd project
+          mkdir SpringRestData
+          cd SpringRestData
           cd ..
-          cp project/target/SpringRestData-1.0.0.jar  
+          cp SpringRestData/1.0.0/SpringRestData-1.0.0.jar 
           echo "Onboarder service packaged successfully."
          
     - uses: actions/upload-artifact@v1
       with:
        name: artifact
-       path: project/
+       path: SpringRestData/
            
-    - name: Deploy to Github Package Registry
-      run: |
-            mvn --version
-            mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN deploy -e
-            
+    
     
       
 
