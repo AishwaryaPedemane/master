@@ -26,8 +26,7 @@ jobs:
       run: | 
           mkdir SpringRestData
           cd SpringRestData
-          cd ..
-          cp SpringRestData/SpringRestData-1.0.0.jar 
+          cp SpringRestData-1.0.0.jar 
           echo " Packaged successfully."
          
     - uses: actions/upload-artifact@v1
