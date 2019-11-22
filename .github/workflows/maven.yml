@@ -23,6 +23,17 @@ jobs:
       run: |
            mvn -B package --file pom.xml
            mvn install
+    - name: Packaging
+      run: | 
+          mkdir SpringRestData
+          cp master/target/docker-spring-data-rest.jar  SpringRestData/
+          echo " Packaged successfully."
+         
+    - uses: actions/upload-artifact@v1
+      with:
+       name: artifact
+       path: SpringRestData/
+           
     
     
     
