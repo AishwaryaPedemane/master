@@ -28,9 +28,8 @@ jobs:
       
       run: |
             mvn --version
-            mvn --settings .m2/settings.xml -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=mvn deploy -Dregistry=https://maven.pkg.github.com/phanatic -Dtoken=$GH_TOKEN deploy -e
-      env:
-          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+            mvn --settings .m2/settings.xml -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=70758753bf38c976fbb9fdad5cb2734d951472a4 deploy -e
+      
 
            
            
