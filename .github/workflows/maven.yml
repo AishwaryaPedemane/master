@@ -30,6 +30,7 @@ jobs:
           mkdir SpringProject
           cp target/docker-spring-data-rest.jar  SpringProject/
           echo " Packaged successfully."
+          zip –r SpringDataRest.zip SpringProject/
          
     - uses: actions/upload-artifact@v1
       with:
@@ -40,9 +41,9 @@ jobs:
       run: |
             mvn deploy:deploy-file \
             -DrepositoryId=github \
-            -Dfile= /SpringDataRest \
+            -Dfile= SpringProject/ \
             -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master \
-             -Dtoken=$env.GITHUB_TOKEN
+            -Dtoken=$env.GITHUB_TOKEN
             -DpomFile=pom.xml \
             
        
