@@ -36,8 +36,11 @@ jobs:
        
     - name: Deploy to Github Package Registry
       run: |
-            mvn --version
-            mvn --settings .m2/settings.xml -Dfile=target/docker-spring-data-rest.jar -Dtoken=$env.GITHUB_TOKEN deploy -e
+            mvn deploy:deploy-file \
+            -DrepositoryId=github \
+            -Dfile=target/docker-spring-data-rest.jar \
+            -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master \
+            -DpomFile=pom.xml
            
     
     
