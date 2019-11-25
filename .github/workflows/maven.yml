@@ -36,6 +36,9 @@ jobs:
       with:
        name: artifact
        path: SpringProject/
+       
+    - name: testing
+      run: mvn -X clean package deploy:deploy-file -Dfile=artifact-1.0.zip
       
     - name: Build
       run: |
