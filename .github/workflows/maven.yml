@@ -45,7 +45,12 @@ jobs:
            mvn deploy:deploy-file -Durl=.m2/settings.xml \
                        -DrepositoryId=github  \
                        -Dfile=SpringProject/ \
+                       -DgroupId=com.example \
+                       -DartifactId=SpringRestData \
+                       -Dversion=1.0.1 \
+                       -Dpackaging=jar 
                        -Dtoken=$env.GITHUB_TOKEN \
+                        
             
             
        
