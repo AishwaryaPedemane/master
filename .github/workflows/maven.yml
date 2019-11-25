@@ -42,10 +42,13 @@ jobs:
             mvn deploy:deploy-file \
             -DrepositoryId=github \
             -Dfile= SpringProject/ \
+            -DgroupId=com.example \
+            -DartifactId=SpringRestData \
+            -Dversion=1.0.1 \
+            -Dpackaging=jar \
             -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master \
             -Dtoken=$env.GITHUB_TOKEN
             -DpomFile=pom.xml \
-            -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.0.1 -Dpackaging=jar
             
        
     
