@@ -26,9 +26,7 @@ jobs:
     
             
     - name: Packaging
-      env:
-           GITHUB_USERNAME: x-access-token
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+     
       run: | 
           mkdir SpringProject
           cp target/docker-spring-data-rest.jar  SpringProject/
@@ -45,6 +43,9 @@ jobs:
        path: SpringProject/
    
     - name: Build
+      env:
+           GITHUB_USERNAME: x-access-token
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
            mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dfile=SpringProject/ -DpomFile=pom.xml deploy -e
            
