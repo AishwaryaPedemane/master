@@ -28,11 +28,18 @@ jobs:
     - name: Packaging
      
       run: | 
+         
           mkdir SpringProject
           cp target/docker-spring-data-rest.jar  SpringProject/
           cd SpringProject/
           cd ..
           pwd
+          ls -ll
+          mkdir bin
+          cd ..
+          cp target/docker-spring-data-rest.jar SpringProject/bin/
+          zip -r SpringProject/bin
+          cd SpringProject/ 
           ls -ll
           echo " Packaged successfully."
           mvn --version
