@@ -32,12 +32,7 @@ jobs:
           mkdir SpringProject
           cp SpringRestData/target/docker-spring-data-rest.jar  SpringProject/
           cd SpringProject/
-          mkdir testfolder
-          cd ..
-          cp SpringRestData/target/docker-spring-data-rest.jar  SpringProject/testfolder/
-          
-          pwd
-          zip -r SpringProject/testfolder SpringProject/target
+         
           ls -ll
           
           echo " Packaged successfully."
