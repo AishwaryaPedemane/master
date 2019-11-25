@@ -30,11 +30,10 @@ jobs:
       run: | 
           mkdir SpringProject
           cp target/docker-spring-data-rest.jar  SpringProject/
-          mkdir testfolder
-          cp testfolder SpringProject/
+          mkdir bin
+          cd ..
+          cp target/docker-spring-data-rest.jar  SpringProject/bin/
           echo " Packaged successfully."
-          zip –r SpringDataRest.zip SpringProject/
-          echo "zipped"
           mvn --version
           
     
