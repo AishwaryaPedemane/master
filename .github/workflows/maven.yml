@@ -37,8 +37,8 @@ jobs:
           ls -ll
           mkdir bin
           cd ..
-          cp target/docker-spring-data-rest.jar SpringProject/bin/
-          zip -r SpringProject/bin
+          
+          zip -r SpringProject/
           cd SpringProject/ 
           ls -ll
           echo " Packaged successfully."
