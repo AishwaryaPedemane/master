@@ -37,13 +37,8 @@ jobs:
           zip –r SpringDataRest.zip SpringProject/
           echo "zipped"
           mvn --version
-          mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dfile=SpringProject/ deploy   -e
-          
-     
-            
-
-
-         
+          mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dfile=SpringProject/ -DpomFile=pom.xml deploy -e
+    
     - uses: actions/upload-artifact@v1
       with:
        name: artifact
