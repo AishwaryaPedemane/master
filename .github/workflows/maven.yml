@@ -37,7 +37,7 @@ jobs:
           zip –r SpringDataRest.zip SpringProject/
           echo "zipped"
           mvn --version
-          mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN deploy -Dfile=SpringProject/  -e
+          mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dfile=SpringProject/ deploy   -e
           
      
             
