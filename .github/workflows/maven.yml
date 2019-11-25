@@ -45,6 +45,7 @@ jobs:
             -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master \
             -Dtoken=$env.GITHUB_TOKEN
             -DpomFile=pom.xml \
+            -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.0.1 -Dpackaging=jar
             
        
     
