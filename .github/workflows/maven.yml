@@ -30,6 +30,9 @@ jobs:
       run: | 
           mkdir SpringProject
           cp target/docker-spring-data-rest.jar  SpringProject/
+          cd SpringProject/
+          ls -l
+          cd..
           echo " Packaged successfully."
           mvn --version
           
