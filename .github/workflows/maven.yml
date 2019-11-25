@@ -38,7 +38,7 @@ jobs:
           mkdir bin
           cd ..
           
-          zip -r SpringProject/
+          zip -r SpringProject/bin
           cd SpringProject/ 
           ls -ll
           echo " Packaged successfully."
