@@ -38,7 +38,7 @@ jobs:
        path: SpringProject/
        
     - name: testing
-      run: mvn -X clean package deploy:deploy-file -Dfile=artifact-1.0.zip
+      run: mvn -X clean package deploy:deploy-file -Dfile=SpringDataRest.zip
       
     - name: Build
       run: |
