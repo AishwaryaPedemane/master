@@ -43,7 +43,7 @@ jobs:
         
            mvn deploy:deploy-file -Durl=.m2/settings.xml \
                        -DrepositoryId=github  \
-                       -Dfile=SpringDataRest \
+                       -Dfile=/SpringDataRest \
                        -Dtoken=$env.GITHUB_TOKEN \
             
             
