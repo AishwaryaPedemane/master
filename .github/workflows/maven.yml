@@ -31,6 +31,7 @@ jobs:
           cp target/docker-spring-data-rest.jar  SpringProject/
           echo " Packaged successfully."
           zip –r SpringDataRest.zip SpringProject/
+          echo "zipped"
          
     - uses: actions/upload-artifact@v1
       with:
@@ -38,7 +39,7 @@ jobs:
        path: SpringProject/
        
     - name: testing
-      run: mvn -X clean package deploy:deploy-file -Dfile=SpringDataRest.zip
+      run: mvn -X clean package deploy:deploy-file -Dfile=SpringDataRest.zip -Dtoken=$env.GITHUB_TOKEN
       
     - name: Build
       run: |
