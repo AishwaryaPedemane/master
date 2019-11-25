@@ -23,13 +23,7 @@ jobs:
       run: |
            mvn -B package --file pom.xml
            
-    - name: Deploy to Github Package Registry
-      env:
-           GITHUB_USERNAME: x-access-token
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-            mvn --version
-            mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN deploy -e
+    
             
     - name: Packaging
       run: | 
@@ -41,6 +35,16 @@ jobs:
       with:
        name: artifact
        path: SpringProject/
+      
+    - name: Build
+      run: |
+            mvn deploy:deploy-file \
+            -DrepositoryId=github \
+            -Dfile= /SpringDataRest \
+            -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master \
+             -Dtoken=$env.GITHUB_TOKEN
+            -DpomFile=pom.xml \
+            
        
     
        
