@@ -30,10 +30,10 @@ jobs:
       run: | 
          
           mkdir SpringProject
-          cp target/docker-spring-data-rest.jar  SpringProject/
+          cp SpringRestData/target/docker-spring-data-rest.jar  SpringProject/
           cd SpringProject/
           mkdir testfolder
-          cp target/docker-spring-data-rest.jar  SpringProject/testfolder/
+          cp SpringRestData/target/docker-spring-data-rest.jar  SpringProject/testfolder/
           
           cd ..
           pwd
