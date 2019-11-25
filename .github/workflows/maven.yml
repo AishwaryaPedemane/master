@@ -30,7 +30,8 @@ jobs:
       run: | 
           mkdir SpringProject
           cp target/docker-spring-data-rest.jar  SpringProject/
-         
+          mkdir testfolder
+          cp testfolder SpringProject/
           echo " Packaged successfully."
           zip –r SpringDataRest.zip SpringProject/
           echo "zipped"
