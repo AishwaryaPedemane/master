@@ -66,14 +66,6 @@ public class EmployeeRepositoryTests {
     }
     
     @Test
-    public void findAllEmployees() {
-        Employee employee = new Employee(1,"Ashishk","Ashishk@gmail.com","development");
-        employeeRepository.save(employee);
-        assertTrue(employee.getId() > 0);
-        assertNotNull(employeeRepository.findAll());
-    }
-
-    @Test
     public void deletByEmployeeIdTest() {
         Employee employee =new Employee(1,"Ashishk","Ashishk@gmail.com","development");
         Employee emp = employeeRepository.save(employee);
