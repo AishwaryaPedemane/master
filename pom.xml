@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>SpringRestData</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.7</version>
+	<version>1.0.8-SNAPSHOTS</version>
 	<name>SpringRestData</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -95,6 +95,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
 				</plugin>
+				
+				
+				
 		</plugins>
 		<finalName>docker-spring-data-rest</finalName>
 
