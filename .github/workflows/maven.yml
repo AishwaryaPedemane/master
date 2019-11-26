@@ -39,10 +39,10 @@ jobs:
           cp -r config Spring-Project/
           cp -r script Spring-Project/
           cp -r security-key Spring-Project/
-          cp -r .m2 Spring-Project/
+          
           cd Spring-Project
-          zip -r ../artifact.zip config script security-key bin .m2
-          mvn deploy:deploy-file --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.0.9 -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
+          zip -r ../artifact.zip config script security-key bin 
+          mvn deploy:deploy-file --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.1.0 -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
           cd ..
           ls -ll
           
