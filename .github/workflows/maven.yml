@@ -28,16 +28,19 @@ jobs:
     - name: Packaging
      
       run: | 
-         
-          mkdir SpringProject
-          cp target/docker-spring-data-rest.jar  SpringProject/
-          cd SpringProject/
+          mkdir Spring-Project
+          cd Spring-Project
+          mkdir bin
+          cd ..
+          cp SpringRestData/target/docker-spring-data-rest.jar Spring-Project/bin/
+          cp -r SpringRestData/config Spring-Project/
+          cp -r SpringRestData/script Spring-Project/
+          cp -r SpringRestData/security-key Spring-Project/
+          cd Spring-Project/
           ls -ll
-                  
+          cd ..   
           echo " Packaged successfully."
-          mvn --version
-          
-    
+         
     - uses: actions/upload-artifact@v1
       with:
        name: artifact
