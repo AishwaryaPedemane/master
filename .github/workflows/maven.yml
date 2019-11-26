@@ -32,7 +32,7 @@ jobs:
           cd Spring-Project
           mkdir bin
           cd ..
-          cp SpringRestData/target/docker-spring-data-rest.jar Spring-Project/bin/
+          cp  target/docker-spring-data-rest.jar Spring-Project/bin/
           cp -r SpringRestData/config Spring-Project/
           cp -r SpringRestData/script Spring-Project/
           cp -r SpringRestData/security-key Spring-Project/
