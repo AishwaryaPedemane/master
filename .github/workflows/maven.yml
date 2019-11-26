@@ -44,7 +44,7 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
        name: artifact
-       path: SpringProject/
+       path: Spring-Project/
    
     - name: Build
       env:
