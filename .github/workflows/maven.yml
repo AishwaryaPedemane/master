@@ -32,12 +32,11 @@ jobs:
           mkdir SpringProject
           cp target/docker-spring-data-rest.jar  SpringProject/
           cd SpringProject/
+          ls -ll
           cd ..
           cp testfolder/testfile 
-          zip -r testfolder/testfile  /SpringProject
+          zip -r SpringRestData/testfolder/testfile  /SpringProject
          
-          ls -ll
-          
           echo " Packaged successfully."
           mvn --version
           
