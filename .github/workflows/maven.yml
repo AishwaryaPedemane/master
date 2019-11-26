@@ -26,6 +26,9 @@ jobs:
     
             
     - name: Packaging
+      env:
+           GITHUB_USERNAME: x-access-token
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
      
       run: | 
           mkdir Spring-Project
@@ -36,24 +39,22 @@ jobs:
           cp -r config Spring-Project/
           cp -r script Spring-Project/
           cp -r security-key Spring-Project/
-          cd Spring-Project/
+          
+          cd Spring-Project
+          zip -r ../artifact.zip config script security-key bin 
+          mvn deploy:deploy-file --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.1.1 -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
+          cd ..
           ls -ll
-          cd ..   
+          
+
           echo " Packaged successfully."
          
     - uses: actions/upload-artifact@v1
       with:
        name: artifact
-       path: SpringProject/
-   
-    - name: Build
-      env:
-           GITHUB_USERNAME: x-access-token
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-           mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dfile=Spring-Project/ -DpomFile=pom.xml deploy -e
-           
-            
+       path: Spring-Project/
+    
+    
             
        
     
