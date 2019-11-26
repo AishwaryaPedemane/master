@@ -36,9 +36,11 @@ jobs:
           cp -r config Spring-Project/
           cp -r script Spring-Project/
           cp -r security-key Spring-Project/
-          cd Spring-Project/
+          cd Spring-Project
+          zip -r ../artifact.zip config script security-key bin
+          cd ..
           ls -ll
-          cd ..   
+            
           echo " Packaged successfully."
          
     - uses: actions/upload-artifact@v1
