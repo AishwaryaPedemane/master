@@ -43,7 +43,7 @@ jobs:
           zip -r ../artifact.zip config script security-key bin
           cd ..
           ls -ll
-          mvn deploy:deploy-file --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.0.8 -Dpackaging=zip -Dfile=Spring-Project/ -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
+          mvn deploy:deploy-file --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.0.8 -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
 
           echo " Packaged successfully."
          
