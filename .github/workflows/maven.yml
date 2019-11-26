@@ -28,16 +28,19 @@ jobs:
     - name: Packaging
      
       run: | 
-         
-          mkdir SpringProject
-          cp target/docker-spring-data-rest.jar  SpringProject/
-          cd SpringProject/
+          mkdir Spring-Project
+          cd Spring-Project
+          mkdir bin
+          cd ..
+          cp  target/docker-spring-data-rest.jar Spring-Project/bin/
+          cp -r config Spring-Project/
+          cp -r script Spring-Project/
+          cp -r security-key Spring-Project/
+          cd Spring-Project/
           ls -ll
-                  
+          cd ..   
           echo " Packaged successfully."
-          mvn --version
-          
-    
+         
     - uses: actions/upload-artifact@v1
       with:
        name: artifact
@@ -48,7 +51,7 @@ jobs:
            GITHUB_USERNAME: x-access-token
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-           mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dfile=SpringProject/ -DpomFile=pom.xml deploy -e
+           mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dfile=Spring-Project/ -DpomFile=pom.xml deploy -e
            
             
             
