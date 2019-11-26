@@ -47,6 +47,11 @@ jobs:
       with:
        name: artifact
        path: Spring-Project/
+    - name: test
+      env:
+           GITHUB_USERNAME: x-access-token
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: mvn deploy:deploy-file -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.0.8 -Dpackaging=zip -Dfile=Spring-Project.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
    
     - name: Build
       env:
