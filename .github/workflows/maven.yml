@@ -33,9 +33,9 @@ jobs:
           mkdir bin
           cd ..
           cp  target/docker-spring-data-rest.jar Spring-Project/bin/
-          cp -r SpringRestData/config Spring-Project/
-          cp -r SpringRestData/script Spring-Project/
-          cp -r SpringRestData/security-key Spring-Project/
+          cp -r config Spring-Project/
+          cp -r script Spring-Project/
+          cp -r security-key Spring-Project/
           cd Spring-Project/
           ls -ll
           cd ..   
@@ -51,7 +51,7 @@ jobs:
            GITHUB_USERNAME: x-access-token
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-           mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dfile=SpringProject/ -DpomFile=pom.xml deploy -e
+           mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dfile=Spring-Project/ -DpomFile=pom.xml deploy -e
            
             
             
