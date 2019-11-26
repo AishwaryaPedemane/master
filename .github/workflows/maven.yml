@@ -32,6 +32,9 @@ jobs:
           mkdir SpringProject
           cp target/docker-spring-data-rest.jar  SpringProject/
           cd SpringProject/
+          cd ..
+          cp testfolder/testfile 
+          zip -r testfolder/testfile  /SpringProject
          
           ls -ll
           
