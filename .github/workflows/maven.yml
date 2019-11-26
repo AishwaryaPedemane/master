@@ -40,7 +40,8 @@ jobs:
           zip -r ../artifact.zip config script security-key bin
           cd ..
           ls -ll
-            
+          mvn deploy:deploy-file -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.0.8 -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
+
           echo " Packaged successfully."
          
     - uses: actions/upload-artifact@v1
@@ -53,10 +54,7 @@ jobs:
            GITHUB_USERNAME: x-access-token
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-           cd Spring-project
-           mvn deploy:deploy-file -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.0.8 -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
-           cd ..
-           ls -ll
+       
            mvn --settings .m2/settings.xml -Dtoken=$env.GITHUB_TOKEN -Dpackaging=zip -Dfile=Spring-project/  -DpomFile=pom.xml deploy -e
            
             
