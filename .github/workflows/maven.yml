@@ -42,8 +42,7 @@ jobs:
           
           cd Spring-Project
           zip -r ../artifact.zip config script security-key bin 
-         
-          mvn deploy:deploy-file --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.0-$build.buildNumber -DuniqueVersion=false -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
+          mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=$env.GITHUB_TOKEN
           
           cd ..
           ls -ll
