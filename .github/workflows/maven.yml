@@ -42,7 +42,7 @@ jobs:
           
           cd Spring-Project
           zip -r ../artifact.zip config script security-key bin 
-          mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=$env.GITHUB_TOKEN
+          mvn  -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=$env.GITHUB_TOKEN deploy -e
           
           cd ..
           ls -ll
