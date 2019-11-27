@@ -108,6 +108,11 @@
 			<name>GitHub OWNER Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/AishwaryaPedemane/master</url>
 		</repository>
+		<snapshotRepository>
+            <id>snapshots</id>
+            <name>Snapshots</name>
+            <url>https://maven.pkg.github.com/AishwaryaPedemane/master</url>
+        </snapshotRepository>
 	</distributionManagement>
 
 </project>
