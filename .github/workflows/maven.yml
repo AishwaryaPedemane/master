@@ -22,10 +22,8 @@ jobs:
     - name: Build with Maven
       run: |
            mvn -B package --file pom.xml
-           
-    
-            
-    - name: Packaging
+     
+    - name: Packaging and Deloying
       env:
            GITHUB_USERNAME: x-access-token
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -39,11 +37,9 @@ jobs:
           cp -r config Spring-Project/
           cp -r script Spring-Project/
           cp -r security-key Spring-Project/
-          
-          
           cd Spring-Project
           zip -r ../artifact.zip config script security-key bin 
-          mvn deploy:deploy-file --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.1-$build.buildNumber -DuniqueVersion=false -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
+          mvn deploy:deploy-file --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=1.1.9 -DuniqueVersion=false -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master
           cd ..
           ls -ll
           
