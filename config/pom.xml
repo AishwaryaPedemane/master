@@ -100,7 +100,19 @@
 				
 		</plugins>
 		<finalName>docker-spring-data-rest</finalName>
+<extensions>
 
+                  <extension>
+
+                        <groupId>org.apache.maven.wagon</groupId>
+
+                        <artifactId>wagon-webdav</artifactId>
+
+                        <version>1.0-beta-2</version>
+
+                  </extension>
+
+            </extensions>
 	</build>
 	<distributionManagement>
 		<repository>
@@ -109,10 +121,14 @@
 			<url>https://maven.pkg.github.com/AishwaryaPedemane/master</url>
 		</repository>
 		<snapshotRepository>
-            <id>snapshots</id>
-            <name>Snapshots</name>
-            <url>https://maven.pkg.github.com/AishwaryaPedemane/master</url>
-        </snapshotRepository>
+
+                  <id>github</id>
+
+                  <name>GitHub OWNER Apache Maven Packages</name>
+
+                  <url>https://maven.pkg.github.com/AishwaryaPedemane/master</url>
+
+            </snapshotRepository>
 	</distributionManagement>
 
 </project>
