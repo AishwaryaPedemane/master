@@ -31,7 +31,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
             mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=$GITHUB_TOKEN
-            mvn -Dmaven.wagon.http.pool=false clean deploy
+           
      
     - name: Packaging and Deloying
       env:
