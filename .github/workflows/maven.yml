@@ -26,6 +26,10 @@ jobs:
     - name: Build with Maven
       run: |
            mvn -B package --file pom.xml
+    - name: deploy
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: mvn -Dmaven.wagon.http.pool=false clean deploy
      
     - name: Packaging and Deloying
       env:
@@ -45,6 +49,7 @@ jobs:
           zip -r ../artifact.zip config script security-key bin 
           mvn deploy:deploy-file --settings config/settings.xml -Dmaven.wagon.http.pool=false -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=0.0.1-SNAPSHOT -DuniqueVersion=false -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -e
           echo " Packaged successfully and Deployed"
+   
          
     - uses: actions/upload-artifact@v1
       with:
