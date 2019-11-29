@@ -69,7 +69,7 @@
 			<groupId>org.apache.maven.wagon</groupId>
 			<artifactId>wagon</artifactId>
 			<version>3.3.4</version>
-			<type>pom</type>
+			
 		</dependency>
 	</dependencies>
 
