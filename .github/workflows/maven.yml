@@ -29,7 +29,9 @@ jobs:
     - name: deploy
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn -Dmaven.wagon.http.pool=false clean deploy
+      run: |
+            mvn deploy -Dregistry=https://maven.pkg.github.com/AishwaryaPedemane -Dtoken=$GITHUB_TOKEN
+            mvn -Dmaven.wagon.http.pool=false clean deploy
      
     - name: Packaging and Deloying
       env:
