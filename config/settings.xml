@@ -16,10 +16,8 @@
           <id>central</id>
           <url>https://repo1.maven.org/maven2</url>
           <releases><enabled>true</enabled></releases>
-          <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-          </snapshots>
+          <snapshots><enabled>false</enabled></snapshots>
+                 
          </repository>
         <repository>
           <id>github</id>
@@ -35,12 +33,6 @@
       <id>github</id>
       <username>${env.GITHUB_USERNAME}</username>
       <password>${env.GITHUB_TOKEN}</password>
-
     </server>
-    <server>
-      <id>snapshot</id>
-      <username>${env.GITHUB_USERNAME}</username>
-      <password>${env.GITHUB_TOKEN}</password>
-    </server>
-  </servers>
+      </servers>
 </settings>
