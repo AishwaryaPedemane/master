@@ -39,7 +39,7 @@ jobs:
           cp -r security-key Spring-Project/
           cd Spring-Project
           zip -r ../artifact.zip config script security-key bin 
-          mvn --settings config/settings.xml  -Dtoken=$env.GITHUB_TOKEN deploy -e
+          mvn deploy --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -e
           echo " Packaged successfully and Deployed"
    
          
