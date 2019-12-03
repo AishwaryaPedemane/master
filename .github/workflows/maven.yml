@@ -18,6 +18,10 @@ jobs:
             sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-amazon-corretto
             java -version
             sudo update-alternatives --config java 
+    -  name: setup-maven-settings
+       uses: s4u/maven-settings-action@v1
+       with:
+          servers: '[{"id": "github", "username": "x-access-token", "password": "${GITHUB_TOKEN}"}]'
    
     - name: Build with Maven
       run: |
