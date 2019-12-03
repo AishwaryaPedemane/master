@@ -20,11 +20,7 @@
             <enabled>true</enabled>
             <updatePolicy>always</updatePolicy>
           </snapshots>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>daily</updatePolicy>
-        </releases>
-        </repository>
+         </repository>
         <repository>
           <id>github</id>
           <name>GitHub OWNER Apache Maven Packages</name>
