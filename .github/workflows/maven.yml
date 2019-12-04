@@ -28,7 +28,7 @@ jobs:
     - name: deploy
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn -Dmaven.wagon.http.pool=false clean --settings config/settings.xml  -Dtoken=$env.GITHUB_TOKEN -Dpomfile=config/pom.file deploy
+      run: mvn -Dmaven.wagon.http.pool=false clean --settings config/settings.xml -DcreateChecksum=true -Dtoken=$env.GITHUB_TOKEN -Dpomfile=config/pom.file deploy
    
     - name: Build with Maven
       run: |
