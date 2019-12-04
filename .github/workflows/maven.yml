@@ -18,17 +18,6 @@ jobs:
             sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-amazon-corretto
             java -version
             sudo update-alternatives --config java 
-    -  name: setup-maven-settings
-       uses: s4u/maven-settings-action@v1
-       with:
-          servers: '[{"id": "github", "username": "x-access-token", "password": "${GITHUB_TOKEN}"}]'
-    - name: checkout
-      uses: actions/checkout@v1
-
-    - name: deploy
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn -Dmaven.wagon.http.pool=false clean --settings config/settings.xml -DcreateChecksum=true -Dtoken=$env.GITHUB_TOKEN -Dpomfile=config/pom.file deploy
    
     - name: Build with Maven
       run: |
@@ -53,7 +42,6 @@ jobs:
           mvn deploy:deploy-file --settings config/settings.xml  -Dtoken=$env.GITHUB_TOKEN -DgroupId=com.example -DartifactId=SpringRestData -Dversion=0.0.1-SNAPSHOT -Dpackaging=zip -Dfile=../artifact.zip -DrepositoryId=github -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -e
           echo " Packaged successfully and Deployed"
    
-         
     - uses: actions/upload-artifact@v1
       with:
        name: artifact
