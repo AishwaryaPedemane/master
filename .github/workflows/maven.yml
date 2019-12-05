@@ -21,7 +21,7 @@ jobs:
    
     - name: Build with Maven
       run: |
-           cd SpringRestData
+           cd master
            mvn clean package -DskipTests=true
     
     - name: Packaging and Deloying
