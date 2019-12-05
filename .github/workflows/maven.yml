@@ -37,10 +37,8 @@ jobs:
           cp -r config Spring-Project/
           cp -r script Spring-Project/
           cp -r security-key Spring-Project/
-          cd Spring-Project
           zip -r ../artifact.zip config script security-key bin 
-          cp ../artifact.zip Spring-Project/
-          cd ..
+         
           mvn deploy:deploy-file --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -DrepositoryId=github -Dfile=../artifact.zip -DpomFile=pom.xml -DgroupId=com.example -DartifactId=SpringRestData -Dpackaging=zip -e
           echo " Packaged successfully and Deployed"
             
