@@ -15,8 +15,8 @@
         <repository>
           <id>central</id>
           <url>https://repo1.maven.org/maven2</url>
-          <releases><enabled>true</enabled></releases>
-          <snapshots><enabled>false</enabled></snapshots>
+          <releases><enabled>true</enabled><updatePolicy>daily</updatePolicy></releases>
+          <snapshots><enabled>true</enabled><updatePolicy>always</updatePolicy></snapshots>
                  
          </repository>
         <repository>
