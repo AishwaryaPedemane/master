@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>SpringRestData</artifactId>
         <packaging>jar</packaging>
-	<version>0.5.1</version>
+	<version>0.6.1</version>
 	<name>SpringRestData</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
