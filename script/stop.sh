@@ -1,5 +1,5 @@
 
-PID=`ps -eaf | grep A365AuthIntegration-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{print $2}'`
+PID=`ps -eaf | grep docker-spring-data-rest.jar | grep -v grep | awk '{print $2}'`
 if [ "" != "$PID" ];
 then
     echo "Killing onboard-service with $PID"
