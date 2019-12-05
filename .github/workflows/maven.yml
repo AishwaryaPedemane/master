@@ -22,7 +22,6 @@ jobs:
     - name: Build with Maven
       run: |
             mvn -B package --file pom.xml
-
     
     - name: Packaging and Deloying
       env:
@@ -40,7 +39,8 @@ jobs:
           cp -r security-key Spring-Project/
           cd Spring-Project
           zip -r ../artifact.zip config script security-key bin 
-          mvn deploy:deploy-file --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -DrepositoryId=github -Dfile=pom.xml -DpomFile=SpringRestData/pom.xml -DgroupId=com.example -DartifactId=SpringRestData -Dpackaging=zip -e
+          zip -r Spring-Project
+          mvn deploy:deploy-file --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -DrepositoryId=github -Dfile=Spring-Project -DpomFile=SpringRestData/pom.xml -DgroupId=com.example -DartifactId=SpringRestData -Dpackaging=zip -e
           echo " Packaged successfully and Deployed"
             
     - uses: actions/upload-artifact@v1
