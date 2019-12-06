@@ -20,6 +20,9 @@ jobs:
             sudo update-alternatives --config java 
    
     - name: Build with Maven
+      env:
+           GITHUB_USERNAME: x-access-token
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
             mvn -B package --file pom.xml
             mvn clean deploy --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -Drevision=1.0.0-SNAPSHOT
