@@ -33,7 +33,7 @@ jobs:
           cd Spring-Project
           mkdir bin
           cd ..
-          cp  target/docker-spring-data-rest-${project.artifactId}-${project.version}-${timestamp}.jar Spring-Project/bin/
+          cp  target/docker-spring-data-rest-$project.artifactId-$project.version-$timestamp.jar Spring-Project/bin/
           cp -r config Spring-Project/
           cp -r script Spring-Project/
           cp -r security-key Spring-Project/
