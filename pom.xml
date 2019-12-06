@@ -12,7 +12,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>SpringRestData</artifactId>
       	<version>1.0.0</version>
-	<packaging>jar</packaging>
+	
 	<name>SpringRestData</name>
 	
 	<description>Demo project for Spring Boot</description>
