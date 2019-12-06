@@ -12,8 +12,9 @@
 	<groupId>com.example</groupId>
 	<artifactId>SpringRestData</artifactId>
       	<version>1.0.0</version>
-	<name>SpringRestData</name>
 	<packaging>jar</packaging>
+	<name>SpringRestData</name>
+	
 	<description>Demo project for Spring Boot</description>
 	
 	<properties>
@@ -109,6 +110,20 @@
         </execution>
       </executions>
     </plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				</plugin>
 			
 		</plugins>
 		   <finalName>docker-spring-data-rest</finalName>
