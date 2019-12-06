@@ -150,8 +150,8 @@
           </plugin>
 				
 		</plugins>
-		   <finalName>${project.artifactId}-${project.version}-${timestamp}</finalName>
-		<finalName>docker-spring-data-rest</finalName>
+		   <finalName>docker-spring-data-rest-${project.artifactId}-${project.version}-${timestamp}</finalName>
+		
 
 	</build>
 	<distributionManagement>
