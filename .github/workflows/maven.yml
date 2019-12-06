@@ -22,6 +22,7 @@ jobs:
     - name: Build with Maven
       run: |
             mvn -B package --file pom.xml
+            mvn clean deploy -Drevision=1.0.0-SNAPSHOT
     
     - name: Packaging and Deloying
       env:
