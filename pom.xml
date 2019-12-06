@@ -9,12 +9,6 @@
 		<version>2.1.7.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<parent>
-    <groupId>org.apache</groupId>
-    <artifactId>apache</artifactId>
-    <version>18</version>
-  </parent>
-  
 	<groupId>com.example</groupId>
 	<artifactId>SpringRestData</artifactId>
       	<version>${revision}</version>
