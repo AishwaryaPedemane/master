@@ -19,8 +19,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<github.global.server>github</github.global.server>
-		<revision>1.0.0-SNAPSHOT</revision>
-	</properties>
+			</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
