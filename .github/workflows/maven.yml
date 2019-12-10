@@ -33,6 +33,7 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
      
       run: | 
+          mvn release:update-versions -DautoVersionSubmodules=true
           mkdir Spring-Project
           cd Spring-Project
           mkdir bin
@@ -43,7 +44,6 @@ jobs:
           cp -r security-key Spring-Project/
           cd Spring-Project
           zip -r ../artifact.zip config script security-key bin 
-          mvn release:update-versions -DautoVersionSubmodules=true -DpomFile=../pom.xml
           mvn deploy:deploy-file --settings config/continous-deployment-settings.xml -Dtoken=$env.GITHUB_TOKEN -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -DautoVersionSubmodules=true -DrepositoryId=github -Dfile=../artifact.zip -DpomFile=../pom.xml -DgroupId=com.example -DartifactId=SpringRestData -Dpackaging=zip -DgeneratePom=true -e 
           echo " Packaged successfully and Deployed"
             
