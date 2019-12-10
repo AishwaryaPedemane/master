@@ -32,7 +32,6 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
      
       run: | 
-          mvn clean package -Drevision=1.0-${BUILD_NUMBER}-SNAPSHOT 
           mkdir Spring-Project
           cd Spring-Project
           mkdir bin
