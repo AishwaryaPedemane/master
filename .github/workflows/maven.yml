@@ -24,7 +24,7 @@ jobs:
            GITHUB_USERNAME: x-access-token
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-            mvn release:update-versions -DautoVersionSubmodules=true
+            mvn -B package --file pom.xml
             
    
     - name: Packaging and Deloying
@@ -37,13 +37,13 @@ jobs:
           cd Spring-Project
           mkdir bin
           cd ..
-          cp  target/SpringRestData-2.0.1-SNAPSHOT.jar Spring-Project/bin/
+          cp  target/docker-spring-data-rest.jar Spring-Project/bin/
           cp -r config Spring-Project/
           cp -r script Spring-Project/
           cp -r security-key Spring-Project/
           cd Spring-Project
           zip -r ../artifact.zip config script security-key bin 
-          mvn deploy:deploy-file --settings config/continous-deployment-settings.xml -Dtoken=$env.GITHUB_TOKEN -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -DrepositoryId=github -Dfile=../artifact.zip -DpomFile=../pom.xml -DgroupId=com.example -DartifactId=SpringRestData -Dpackaging=zip -DgeneratePom=true -e 
+          mvn deploy:deploy-file --settings config/continous-deployment-settings.xml -Dtoken=$env.GITHUB_TOKEN -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -DautoVersionSubmodules=true -DrepositoryId=github -Dfile=../artifact.zip -DpomFile=../pom.xml -DgroupId=com.example -DartifactId=SpringRestData -Dpackaging=zip -DgeneratePom=true -e 
           echo " Packaged successfully and Deployed"
             
     - uses: actions/upload-artifact@v1
