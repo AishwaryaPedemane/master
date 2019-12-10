@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>SpringRestData</artifactId>
-      	<version>1.0.0</version>
+      	<version>${maven.build.timestamp}</version>
 	
 	<name>SpringRestData</name>
 	
@@ -20,6 +20,8 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<github.global.server>github</github.global.server>
+		 <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>yyyy_MM_dd_HH_mm</maven.build.timestamp.format>
 			</properties>
 	<dependencies>
 		<dependency>
