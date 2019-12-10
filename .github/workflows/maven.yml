@@ -37,7 +37,7 @@ jobs:
           cd Spring-Project
           mkdir bin
           cd ..
-          cp  target/docker-spring-data-rest.jar Spring-Project/bin/
+          cp  target/SpringRestData-2.0.1-SNAPSHOT.jar Spring-Project/bin/
           cp -r config Spring-Project/
           cp -r script Spring-Project/
           cp -r security-key Spring-Project/
