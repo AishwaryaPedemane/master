@@ -42,7 +42,7 @@ jobs:
           cp -r security-key Spring-Project/
           cd Spring-Project
           zip -r ../artifact.zip config script security-key bin 
-          mvn clean package -Drevision=1.0-${BUILD_NUMBER}-SNAPSHOT
+          mvn clean package -Drevision=1.0-${BUILD_NUMBER}-SNAPSHOT -DpomFile=../pom.xml
           mvn deploy:deploy-file --settings config/settings.xml -Dtoken=$env.GITHUB_TOKEN -Durl=https://maven.pkg.github.com/AishwaryaPedemane/master -DrepositoryId=github -Dfile=../artifact.zip -DpomFile=../pom.xml -DgroupId=com.example -DartifactId=SpringRestData -Drevision=1.0.0-SNAPSHOT -Dpackaging=zip -DgeneratePom=false -e 
           echo " Packaged successfully and Deployed"
             
